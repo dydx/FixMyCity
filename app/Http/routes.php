@@ -11,9 +11,21 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+/*
+ | Need routes for:
+ | index - main
+ | index - submit
+ | dashboard - main
+ | dashboard - item view
+ |
+ | dashboard is going to use keen.io templates
+ | need to add Elixir scripts for bootstrap and keen.io
+ */
 
-Route::get('home', 'HomeController@index');
+Route::get('/', 'ClientApp@index');
+
+Route::get('dashboard', 'AdminDashboard@index');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

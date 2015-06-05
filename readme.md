@@ -1,4 +1,4 @@
-## Fix My City
+# Fix My City
 
 This is my entry into the National Day of Civic Hacking. Its a simple webapp and administrative console for collecting and delegating various types of repair and maintainenace for a city
 
