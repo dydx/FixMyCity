@@ -34,10 +34,9 @@ class WorkRequestsTableSeeder extends Seeder {
       $workRequests[$index] = [
         'title'       => $faker->sentence(4),
         'description' => $faker->sentence(15),
-        'geolocation' => json_encode( array(
-          'lat'   => $faker->latitude,
-          'long'  => $faker->longitude
-        )),
+        'complete' => false,
+        'lat' => $faker->latitude,
+        'long' => $faker->longitude,
       ];
     }
     DB::table('workRequests')->insert($workRequests);

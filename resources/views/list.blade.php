@@ -1,5 +1,14 @@
 <ul>
 @foreach($wr_list as $wr)
-  <li>{{ $wr->title }} -> {{ $wr->geolocation }}</li>
+  <li>
+      <div
+      id="map{{$wr->id}}"
+      class="map"
+      data-geo="{{{$wr->geolocation}}}"
+      >
+        <h2>{{$wr->title}}</h2>
+        <p>{{$wr->description}}</p>
+      </div>
+  </li>
 @endforeach
 </ul>

@@ -24,11 +24,6 @@
 
 Route::get('/', 'ClientApp@index');
 
-// just fucking with this
-Route::get('list', function() {
-  $wr_list = App\workRequest::all();
-  return view('list')->with('wr_list', $wr_list);
-});
 
 Route::get('dashboard', 'AdminDashboard@index');
 

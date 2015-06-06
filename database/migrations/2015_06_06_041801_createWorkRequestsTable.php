@@ -17,7 +17,9 @@ class CreateWorkRequestsTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->text('description');
-			$table->json('geolocation');
+			$table->boolean('complete');
+			$table->string('lat');
+			$table->string('long');
 			$table->timestamps();
 		});
 	}

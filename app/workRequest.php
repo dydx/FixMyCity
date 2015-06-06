@@ -9,7 +9,9 @@ class workRequest extends Model {
   protected $fillable = [
     'title',
     'description',
-    'geolocation'
+    'complete',
+    'lat',
+    'long'
   ];
 
 }
