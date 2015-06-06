@@ -4,6 +4,8 @@
   <title>Fix My City: Dashboard</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/keen-dashboards.css" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+  <link rel="stylesheet" href="css/maps.css">
 </head>
 <body>
 
@@ -53,7 +55,8 @@
   </script>
 
   <script type="text/javascript" src="js/keen.min.js"></script>
-  <script type="text/javascript" src="js/meta.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+  <script src="js/maps.js"></script>
 
 </body>
 </html>
