@@ -9,11 +9,11 @@
       <div class="col-sm-4">
         <div class="chart-wrapper">
           <div class="chart-title panel-warning">
-            Down Stop Sign
+            Stop Sign
             <span class="pull-right">6/4/2015</span>
           </div>
           <div class="chart-stage">
-              <div id="map"></div>
+              <div id="map1" class="map"></div>
           </div>
           <div class="chart-notes">
             <ul class="list-group">
@@ -27,16 +27,16 @@
       <div class="col-sm-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Down Stop Sign
+            Pothole
             <span class="pull-right">6/4/2015</span>
           </div>
           <div class="chart-stage">
-              <div id="map2"></div>
+              <div id="map2" class="map"></div>
           </div>
           <div class="chart-notes">
             <ul class="list-group">
-              <li class="list-group-item">540 Telfair St</li>
-              <li class="list-group-item">There is a down stop sign at the corner</li>
+              <li class="list-group-item">1234 East Boundary Street</li>
+              <li class="list-group-item">There is a huge pothole in the middle of the road</li>
             </ul>
           </div>
         </div>
@@ -45,16 +45,16 @@
       <div class="col-sm-4">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Down Stop Sign
+            Water Leak
             <span class="pull-right">6/4/2015</span>
           </div>
           <div class="chart-stage">
-              <div id="map3"></div>
+              <div id="map3" class="map"></div>
           </div>
           <div class="chart-notes">
             <ul class="list-group">
               <li class="list-group-item">540 Telfair St</li>
-              <li class="list-group-item">There is a down stop sign at the corner</li>
+              <li class="list-group-item">There is a fire hydrant leaking all over the road</li>
             </ul>
           </div>
         </div>
