@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder {
 
@@ -14,7 +16,32 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('WorkRequestsTableSeeder');
+
+		$this->command->info('Work Requests Table Seeded');
 	}
+
+}
+
+class WorkRequestsTableSeeder extends Seeder {
+
+  public function run()
+  {
+    $faker = Faker::create();
+    $workRequests = array();
+    foreach(range(1, 10) as $index)
+    {
+      $workRequests[$index] = [
+        'title'       => $faker->sentence(4),
+        'description' => $faker->sentence(15),
+        'geolocation' => json_encode( array(
+          'lat'   => $faker->latitude,
+          'long'  => $faker->longitude
+        )),
+      ];
+    }
+    DB::table('workRequests')->insert($workRequests);
+    //dd($workRequests);
+  }
 
 }
