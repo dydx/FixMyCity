@@ -18,4 +18,9 @@ class AdminDashboard extends Controller {
     return view('dashboard-home')->with('work_requests', workRequest::all());
   }
 
+  public function show($id)
+  {
+    return view('dashboard-single')->with('work_request', workRequest::find($id));
+  }
+
 }

@@ -26,6 +26,7 @@ Route::get('/', 'ClientApp@index');
 
 
 Route::get('dashboard', 'AdminDashboard@index');
+Route::get('/ticket/{id}', 'AdminDashboard@show');
 
 
 Route::controllers([
