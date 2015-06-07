@@ -1,6 +1,6 @@
 # Fix My City
 
-![Dashboard Mockup](http://i.imgur.com/4RvFDn7.png)
+![Dashboard Mockup](http://i.imgur.com/kJa0pcH.png)
 
 This is my entry into the National Day of Civic Hacking. Its a simple webapp and administrative console for collecting and delegating various types of repair and maintainenace for a city
 
