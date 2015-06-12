@@ -7,11 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class PageRenderTest extends TestCase
 {
     use WithoutMiddleware;
-    /**
-     * A basic functional test example.
-     *
-     * @return void
-     */
+
     public function testClientAppMainPage()
     {
         $this->visit('/')
@@ -21,6 +17,6 @@ class PageRenderTest extends TestCase
     public function testAdminAppMainPage()
     {
         $this->visit('/home')
-             ->see('admin area');
+             ->see('Dashboard Overview');
     }
 }

@@ -5216,4 +5216,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.map {
+  height: 200px; }
+
 /*# sourceMappingURL=app.css.map */

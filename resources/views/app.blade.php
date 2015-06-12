@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fix My City</title>
+  <title>Fix My City: @yield('page-title')</title>
 
   <link rel="stylesheet" href="/css/app.css">
 
@@ -17,14 +17,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="{{ url('/' )}}" class="navbar-brand">Fix My City</a>
+        <a href="{{ url('/' )}}" class="navbar-brand">Fix My City: @yield('page-title')</a>
       </div>
 
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-        @if (Auth::guest())
-          <li><a href="{{ url('/auth/login' ) }}">Login</a></li>
-        @else
+        @if (Auth::check())
           <li class="dropdown">
             <a href="#" data-toggle="dropdown" role="button" class="dropdown-toggle">{{ Auth::user()->name }} <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -43,12 +41,23 @@
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>
+        @else
+          <li><a href="{{ url('/auth/login') }}">Login</a></li>
         @endif
       </div>
     </div>
   </nav>
 
-  @yield('content')
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        @yield('sidebar')
+      </div>
+      <div class="col-sm-9">
+        @yield('content')
+      </div>
+    </div>
+  </div>
 
   <script src="/js/all.js"></script>
 </body>
