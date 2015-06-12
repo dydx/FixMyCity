@@ -17,6 +17,7 @@ Route::get('/', 'ClientAppController@index');
 // admin routes
 Route::get('/home', 'AdminAppController@index');
 
+// work requests search
 Route::post('/search-results', 'SearchResultsController@index');
 
 // auth stuffs

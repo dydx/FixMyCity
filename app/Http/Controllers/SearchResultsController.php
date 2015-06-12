@@ -9,9 +9,10 @@ use App\Http\Controllers\Controller;
 
 class SearchResultsController extends Controller
 {
-    public function index(Request $request)
-    {
-      $search_results = $request->input('search');
-      return view('search-results')->with('search_results', $search_results);
-    }
+  // need to connect the dots here and make this do something useful
+  public function index(Request $request)
+  {
+    $search_results = $request->input('search');
+    return view('search-results')->with('search_results', $search_results);
+  }
 }
