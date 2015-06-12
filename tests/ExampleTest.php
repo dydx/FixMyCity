@@ -12,9 +12,15 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicExample()
+    public function testClientAppMainPage()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+             ->see('client area');
+    }
+
+    public function testAdminAppMainPage()
+    {
+        $this->visit('/home')
+             ->see('admin area');
     }
 }

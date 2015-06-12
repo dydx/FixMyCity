@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// client routes
+Route::get('/', 'ClientAppController@index');
+
+// admin routes
+Route::get('/home', 'AdminAppController@index');
