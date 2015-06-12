@@ -3,5 +3,10 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "laravel-elixir": "^1.0.0"
+  },
+  "dependencies": {
+    "end-of-stream": "^1.1.0",
+    "sequencify": "0.0.7",
+    "stream-consume": "^0.1.0"
   }
 }
