@@ -9,9 +9,14 @@ use App\Http\Controllers\Controller;
 
 class ClientAppController extends Controller
 {
-    // need to make user login thingy
-    public function index()
-    {
-      return view('client-home');
-    }
+  public function __construct()
+  {
+    $this->middleware('guest');
+  }
+
+  // need to make user login thingy
+  public function index()
+  {
+    return view('client-home');
+  }
 }

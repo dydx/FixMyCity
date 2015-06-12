@@ -16,3 +16,11 @@ Route::get('/', 'ClientAppController@index');
 
 // admin routes
 Route::get('/home', 'AdminAppController@index');
+
+Route::post('/search-results', 'SearchResultsController@index');
+
+// auth stuffs
+Route::controllers([
+  'auth' => 'Auth\AuthController',
+  'password' => 'Auth\PasswordController'
+]);
