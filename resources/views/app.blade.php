@@ -38,8 +38,8 @@
         <!-- dont show this if not logged in-->
         <form action="/search-results" method="post" class="navbar-form navbar-right" role="search">
           <div class="form-group">
-            <input type="hidden" _token="{{ csrf_token() }}">
-            <input type="text" placeholder="Search" class="form-control">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="text" placeholder="Search" name="search" id="search" class="form-control">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>
