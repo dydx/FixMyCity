@@ -24,14 +24,21 @@
 @stop
 
 @section('content')
+
   @foreach($work_orders as $work_order)
-  <div class="col-sm-6">
+
+  <div class="col-sm-4">
     <div class="panel panel-default">
-      <div class="panel-heading">{{ $work_order->description }}</div>
+      <div class="panel-heading">{{ str_limit($work_order->description, 50) }}</div>
       <div class="panel-body">
-        <img src="//placehold.it/450x200" alt="" class="map img-responsive">
+        <div 
+             id="map{{ $work_order->id }}"
+             class="map"
+             data-lat="{{ $work_order->latitude }}"
+             data-long="{{ $work_order->longitude }}"></div>
       </div>
     </div>
   </div>
+
   @endforeach
 @stop

@@ -26,8 +26,7 @@ return [
     |
     */
 
-
-    //'default' => env('DB_CONNECTION', 'mysql'),
+    // need to find better way to do this with dotenv. this is horrible
     'default' => (env('APP_ENV') == 'testing') ? 'sqlite' : 'mysql',
 
     /*
