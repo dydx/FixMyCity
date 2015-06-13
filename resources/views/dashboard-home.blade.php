@@ -25,17 +25,7 @@
 @stop
 
 @section('content')
-
-<?php
-    $todo = $work_orders->filter(function($work_order) {
-      if($work_order->completed == false) {
-        return true;
-      }
-    });
-?>
-
   @foreach($todo_work_orders as $work_order)
-
   <div class="col-sm-6">
     <div class="panel panel-default">
       <div class="panel-heading">{{ str_limit($work_order->description, 50) }}</div>
@@ -48,6 +38,5 @@
       </div>
     </div>
   </div>
-
   @endforeach
 @stop
