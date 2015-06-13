@@ -24,39 +24,14 @@
 @stop
 
 @section('content')
+  @foreach($work_orders as $work_order)
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading">ADDRESS HERE</div>
+      <div class="panel-heading">{{ $work_order->description }}</div>
       <div class="panel-body">
         <img src="//placehold.it/450x200" alt="" class="map img-responsive">
       </div>
     </div>
   </div>
-
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">ADDRESS HERE</div>
-      <div class="panel-body">
-        <img src="//placehold.it/450x200" alt="" class="map img-responsive">
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">ADDRESS HERE</div>
-      <div class="panel-body">
-        <img src="//placehold.it/450x200" alt="" class="map img-responsive">
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">ADDRESS HERE</div>
-      <div class="panel-body">
-        <img src="//placehold.it/450x200" alt="" class="map img-responsive">
-      </div>
-    </div>
-  </div>
+  @endforeach
 @stop

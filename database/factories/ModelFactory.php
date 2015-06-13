@@ -19,3 +19,13 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\WorkOrder::class, function($faker) {
+  $faker->seed(1234); // repeatable seed
+  return [
+    'description' => $faker->sentence,
+    'latitude' => $faker->latitude,
+    'longitude' => $faker->longitude,
+    'completed' => false,
+  ];
+});

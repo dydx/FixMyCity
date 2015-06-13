@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWorkRequestsTableMigration extends Migration
+class CreateWorkOrdersTableMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,12 @@ class CreateWorkRequestsTableMigration extends Migration
      */
     public function up()
     {
-        Schema::create('work_requests', function (Blueprint $table) {
+        Schema::create('work_orders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
-            $table->string('geolocation');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->boolean('completed');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateWorkRequestsTableMigration extends Migration
      */
     public function down()
     {
-        Schema::drop('work_requests');
+        Schema::drop('work_orders');
     }
 }

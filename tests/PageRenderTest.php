@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use App\User;
 
 class PageRenderTest extends TestCase
 {
@@ -16,7 +17,9 @@ class PageRenderTest extends TestCase
 
     public function testAdminAppMainPage()
     {
-        $this->visit('/home')
-             ->see('Dashboard Overview');
+        $user = factory(User::class)->create();
+        $this->actingAs($user)
+            ->visit('/home')
+            ->see('Dashboard Overview');
     }
 }
