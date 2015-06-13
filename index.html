@@ -20,7 +20,7 @@
     <header>
       <div class="inner">
         <h1>Fix My City</h1>
-        <h2>Main Webapp (WIP)</h2>
+        <h2>Main Webapp</h2>
         <a href="https://github.com/FixMyCity/FixMyCity" class="button"><small>View project on</small> GitHub</a>
       </div>
     </header>
@@ -33,7 +33,7 @@
 
 <p>This is my submission to the 2015 National Day of Civic Hacking. Fix My City aims to be a comprehensive web based service to empower citizens to inform their maintenance and utilities departments of things that need to be fixed.. in their city.</p>
 
-<p><a href="http://i.imgur.com/kjJa4z3.png">dashboard</a></p>
+<p><img src="http://i.imgur.com/TrI1s32.png" alt="dashboard"></p>
 
 <p>It is still a work in progress. Currently the administrative console is about 70% complete, with a lot of work needed still on the client-facing side of the application.</p>
 
@@ -45,14 +45,14 @@
 <li>PHP 5.6+ (w/mcrypt extension)</li>
 <li>MySQL</li>
 <li>Composer</li>
-<li>Bower</li>
+<li>Node/NPM</li>
 </ul>
 
 <p>To get the code and install it, log into your environment or server and run:</p>
 
 <p><code>git clone https://github.com/dydx/FiMyCity</code></p>
 
-<p>then, move that directory into your web root or just in your local build path. Run <code>bower install</code> and <code>composer install</code>, and let the required packages be downloaded.</p>
+<p>then, move that directory into your web root or just in your local build path. Run <code>npm install</code> and <code>composer install --prefer-dist</code>, and let the required packages be downloaded.</p>
 
 <p>To migrate the database and get setup, you will need to set the correct MySQL connection variables in the .env file, then run the following command in the root of the <code>FixMyCity</code> directory:</p>
 
@@ -66,7 +66,7 @@
 <a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h3>
 
 <ul>
-<li>A lot</li>
+<li>A lot...</li>
 </ul>
         </section>
 
@@ -87,6 +87,16 @@
       </div>
     </div>
 
-  
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-1060804-21");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
