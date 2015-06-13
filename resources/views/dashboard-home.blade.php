@@ -3,12 +3,13 @@
 @section('page-title') Dashboard Overview @stop
 
 @section('sidebar')
+
   <div class="panel panel-default">
-    <div class="panel-heading">Work Requests</div>
+    <div class="panel-heading">Work Orders</div>
     <ul class="list-group">
-      <li class="list-group-item">Todo <span class="badge">42</span></li>
-      <li class="list-group-item">In Progress <span class="badge">21</span></li>
-      <li class="list-group-item">Complete <span class="badge">78</span></li>
+      <li class="list-group-item">Total <span class="badge">{{ $work_orders->count() }}</span></li>
+      <li class="list-group-item">Todo <span class="badge">{{ $todo_work_orders->count() }}</span></li>
+      <li class="list-group-item">Complete <span class="badge">{{ $completed_work_orders->count() }}</span></li>
     </ul>
   </div>
   <div class="panel panel-default">
@@ -25,9 +26,17 @@
 
 @section('content')
 
-  @foreach($work_orders as $work_order)
+<?php
+    $todo = $work_orders->filter(function($work_order) {
+      if($work_order->completed == false) {
+        return true;
+      }
+    });
+?>
 
-  <div class="col-sm-4">
+  @foreach($todo_work_orders as $work_order)
+
+  <div class="col-sm-6">
     <div class="panel panel-default">
       <div class="panel-heading">{{ str_limit($work_order->description, 50) }}</div>
       <div class="panel-body">

@@ -8,6 +8,8 @@ use App\WorkOrder;
 
 class PageRenderTest extends TestCase
 {
+    // create sqlite test database and drop tables afterward
+    use DatabaseMigrations;
     use WithoutMiddleware;
     use DatabaseTransactions;
 
@@ -38,5 +40,38 @@ class PageRenderTest extends TestCase
         $this->actingAs($user)
              ->visit('/home')
              ->see($work_order->description);
+    }
+
+    // make sure 'Total' work orders list item is correct
+    public function testWorkOrdersTotalListItem()
+    {
+        $work_orders = factory(WorkOrder::class, 5)->create();
+        $user = factory(User::class)->create();
+        $this->actingAs($user)
+             ->visit('/home')
+             ->see('Total <span class="badge">5</span>');
+    }
+
+    // make sure 'Todo' work orders list item is correct
+    public function testWorkOrdersTodoListItem()
+    {
+        // these all default to complete=false
+        $work_orders = factory(WorkOrder::class, 5)->create();
+        $user = factory(User::class)->create();
+        $this->actingAs($user)
+             ->visit('/home')
+             ->see('Todo <span class="badge">5</span>');
+    }
+
+    // make sure 'Complete' work orders list item is correct
+    public function testWorkOrdersCompleteListItem()
+    {
+        $work_orders = factory(WorkOrder::class, 5)->create([
+            'completed' => 1,
+        ]);
+        $user = factory(User::class)->create();
+        $this->actingAs($user)
+             ->visit('/home')
+             ->see('Complete <span class="badge">5</span>');
     }
 }
