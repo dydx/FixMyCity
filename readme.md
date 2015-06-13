@@ -1,6 +1,6 @@
 # Fix My City
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/6c6cae6c-5d02-4bce-8861-e1bdb35bbd19/451687/badge.svg)](https://semaphoreci.com/fixmycity/fixmycity)
+[![Build Status](https://semaphoreci.com/api/v1/projects/6c6cae6c-5d02-4bce-8861-e1bdb35bbd19/451631/badge.svg)](https://semaphoreci.com/fixmycity/fixmycity)
 
 ![Dashboard](http://i.imgur.com/VSxnitx.png)
 
