@@ -7,15 +7,16 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class WorkOrderSearchTest extends TestCase
 {
     use WithoutMiddleware;
+    use DatabaseTransactions;
 
     public function testForm()
     {
-      // this will fail until i create a mock user
-      // $this->visit('/')
-      //      ->type('search test', '#search')
-      //      ->press('Search')
-      //      ->see('search test')
-      //      ->onPage('/search-results');
-      return true;
+      $user = factory(App\User::class)->create();
+      $this->actingAs($user)
+           ->visit('/')
+           ->type('search test', '#search')
+           ->press('Search')
+           ->see('search test')
+           ->onPage('/search-results');
     }
 }

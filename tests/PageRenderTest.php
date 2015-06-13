@@ -8,7 +8,6 @@ use App\User;
 class PageRenderTest extends TestCase
 {
     use WithoutMiddleware;
-    // I think I need this for CI?
     use DatabaseTransactions;
 
     public function testClientAppMainPage()
@@ -19,7 +18,6 @@ class PageRenderTest extends TestCase
 
     public function testAdminAppMainPage()
     {
-
         $user = factory(User::class)->create();
         $this->actingAs($user)
             ->visit('/home')
