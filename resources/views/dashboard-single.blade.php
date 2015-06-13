@@ -1,7 +1,5 @@
-@extends('admin')
+@extends('app')
 
 @section('content')
-  <div class="container-fluid">
-    {{$work_request->title}}
-  </div>
+  <h1>single work request</h1>
 @endsection

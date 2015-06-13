@@ -1,0 +1,8 @@
+APP_ENV=testing
+APP_DEBUG=true
+APP_KEY=pZ5C504RKAkDXI9pTVm6ONSfnGs2QL8G
+
+DB_HOST=localhost
+DB_DATABASE=18671ad3b3rVa5fc6017bec1d75d3_test
+DB_USERNAME=runner
+DB_PASSWORD=semaphoredb

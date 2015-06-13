@@ -1,56 +1,42 @@
-@extends('admin')
+@extends('app')
+
+@section('page-title') Dashboard Overview @stop
+
+@section('sidebar')
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Work Orders</div>
+    <ul class="list-group">
+      <li class="list-group-item">Total <span class="badge">{{ $work_orders->count() }}</span></li>
+      <li class="list-group-item">Todo <span class="badge">{{ $todo_work_orders->count() }}</span></li>
+      <li class="list-group-item">Complete <span class="badge">{{ $completed_work_orders->count() }}</span></li>
+    </ul>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Quick Links</div>
+    <ul class="list-group">
+      <li class="list-group-item"><a href="">Menu Item 01</a></li>
+      <li class="list-group-item"><a href="">Menu Item 02</a></li>
+      <li class="list-group-item"><a href="">Menu Item 03</a></li>
+      <li class="list-group-item"><a href="">Menu Item 04</a></li>
+      <li class="list-group-item"><a href="">Menu Item 05</a></li>
+    </ul>
+  </div>
+@stop
 
 @section('content')
-  <div class="container-fluid">
-
-    <div class="row">
-
-      <div class="col-sm-4">
-        <div class="chart-wrapper">
-          <div class="chart-title panel-warning">
-            Down Stop Sign
-            <span class="pull-right">6/5/2015</span>
-          </div>
-          <div class="chart-stage">
-              <div
-                id="map0"
-                class="map"
-                data-lat="33.47"
-                data-long="-81.961"></div>
-          </div>
-          <div class="chart-notes">
-            <ul class="list-group">
-              <li class="list-group-item">ADDRESS GOES HERE</li>
-              <li class="list-group-item">There is a down stop sign at this intersection</li>
-            </ul>
-          </div>
-        </div>
+  @foreach($todo_work_orders as $work_order)
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{ str_limit($work_order->description, 50) }}</div>
+      <div class="panel-body">
+        <div 
+             id="map{{ $work_order->id }}"
+             class="map"
+             data-lat="{{ $work_order->latitude }}"
+             data-long="{{ $work_order->longitude }}"></div>
       </div>
-
-      @foreach($work_requests as $work_request)
-      <div class="col-sm-4">
-        <div class="chart-wrapper">
-          <div class="chart-title panel-warning">
-            {{$work_request->title}}
-            <span class="pull-right">6/5/2015</span>
-          </div>
-          <div class="chart-stage">
-              <div
-                id="map{{$work_request->id}}"
-                class="map"
-                data-lat="{{$work_request->lat}}"
-                data-long="{{$work_request->long}}"></div>
-          </div>
-          <div class="chart-notes">
-            <ul class="list-group">
-              <li class="list-group-item">ADDRESS GOES HERE</li>
-              <li class="list-group-item">{{ str_limit($work_request->description, 100, '...') }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      @endforeach
-
     </div>
-
-@endsection
+  </div>
+  @endforeach
+@stop

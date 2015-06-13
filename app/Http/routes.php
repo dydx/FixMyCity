@@ -11,25 +11,17 @@
 |
 */
 
-/*
- | Need routes for:
- | index - main
- | index - submit
- | dashboard - main
- | dashboard - item view
- |
- | dashboard is going to use keen.io templates
- | need to add Elixir scripts for bootstrap and keen.io
- */
+// client routes
+Route::get('/', 'ClientAppController@index');
 
-Route::get('/', 'ClientApp@index');
+// admin routes
+Route::get('/home', 'AdminAppController@index');
 
+// work requests search
+Route::post('/search-results', 'SearchResultsController@index');
 
-Route::get('dashboard', 'AdminDashboard@index');
-Route::get('/ticket/{id}', 'AdminDashboard@show');
-
-
+// auth stuffs
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+  'auth' => 'Auth\AuthController',
+  'password' => 'Auth\PasswordController'
 ]);
